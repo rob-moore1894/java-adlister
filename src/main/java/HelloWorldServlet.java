@@ -9,9 +9,14 @@ import java.io.PrintWriter;
 public class HelloWorldServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String name = request.getParameter("name");
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        out.println("<h1>Hello, World!</h1>");
+        if (name == null) {
+            out.println("<h1>Hello, World!</h1>");
+        } else {
+            out.println("<h1>Hello, " + name + "!");
+        }
 
     } // End of doGet
 

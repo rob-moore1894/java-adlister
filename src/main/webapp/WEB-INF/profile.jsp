@@ -14,7 +14,7 @@
     </div>
 
     <form action="/logout" method="post">
-        <input type="submit" value="Logout" >
+        <input type="submit" class="btn btn-primary btn-block" value="Logout" >
     </form>
 
 </body>

@@ -9,8 +9,8 @@ import java.io.IOException;
 public class ViewProfileServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        if ((Boolean) request.getSession().getAttribute("user") == false) {
-            response.sendRedirect("/WEB-INF/login.jsp");
+        if (request.getSession().getAttribute(LoginServlet.USER) == null) {
+            response.sendRedirect("/login");
             return;
         }
         request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);

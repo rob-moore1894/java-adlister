@@ -38,7 +38,6 @@ public class LoginServlet extends HttpServlet {
             request.getSession().setAttribute(USER, "user");
             Cookie message = new Cookie("message", "Welcome");
             response.addCookie(message);
-            request.setAttribute("username", username);
             response.sendRedirect("/profile");
         } else {
 

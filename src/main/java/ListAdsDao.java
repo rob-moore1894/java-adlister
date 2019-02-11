@@ -12,7 +12,10 @@ public class ListAdsDao implements Ads {
         return null;
     }
 
-
+    public Ad findOne(Long id){
+        int intId = id.intValue();
+        return ads.get(intId);
+    }
 
     public Long insert(Ad ad) {
       return null;

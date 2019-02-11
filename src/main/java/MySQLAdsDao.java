@@ -18,10 +18,31 @@ public class MySQLAdsDao implements Ads {
                     config.getPassword()
             );
         } catch (SQLException e) {
-            throw new RuntimeException("Error connecting to database!" , e);
+            e.printStackTrace();
         }
     }
 
+    @Override
+    public Ad findOne(Long id) {
+        Ad ad = null;
+        try {
+        Statement statement = connection.createStatement();
+        String query = "SELECT * FROM ads WHERE id = " + id;
+        ResultSet rs = statement.executeQuery(query);
+        while(rs.next()){
+            ad = new Ad (
+                    rs.getLong("id"),
+                    rs.getLong("user_id"),
+                    rs.getString ("title"),
+                    rs.getString("description")
+            );
+        }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return ad;
+    }
 
     @Override
     public List<Ad> all() {

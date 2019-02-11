@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 @WebServlet(name = "controllers.RegisterServlet", urlPatterns = "/register")
 public class RegisterServlet extends HttpServlet {
@@ -19,11 +20,16 @@ public class RegisterServlet extends HttpServlet {
         String username = request.getParameter("username");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
-        String confirmPassword = request.getParameter("confirmPassword")
+        String confirmPassword = request.getParameter("confirmPassword");
 
         // TODO: ensure the submitted information is valid
         if (password.equals(confirmPassword)){
-
+            try {
+                response.sendRedirect("/profile");
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         // TODO: create a new user based off of the submitted information
         // TODO: if a user was successfully created, send them to their profile

@@ -21,11 +21,11 @@
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input id="password" name="password" class="form-control" type="password" value="password">
+                <input id="password" name="password" class="form-control" type="password">
             </div>
             <div>
                 <label for="confirmPassword">Confirm Your Password</label>
-                <input id="confirmPassword" name="password" class="form-control" type="password" value="confirmPassword">
+                <input id="confirmPassword" name="password" class="form-control" type="password">
             </div>
     </div>
         </form>

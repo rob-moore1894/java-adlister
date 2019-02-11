@@ -18,7 +18,7 @@ public class MySQLAdsDao implements Ads {
             DriverManager.registerDriver(new Driver());
             connection = DriverManager.getConnection(
                 config.getUrl(),
-                config.getUser(),
+                config.getUsername(),
                 config.getPassword()
             );
         } catch (SQLException e) {
@@ -30,8 +30,10 @@ public class MySQLAdsDao implements Ads {
     public List<Ad> all() {
         Statement stmt = null;
         try {
+            String sql = "SELECT * FROM ads";
+
             stmt = connection.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM ads");
+            ResultSet rs = stmt.executeQuery(sql);
             return createAdsFromResults(rs);
         } catch (SQLException e) {
             throw new RuntimeException("Error retrieving all ads.", e);

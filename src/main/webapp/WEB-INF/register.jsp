@@ -12,8 +12,8 @@
         <h1>Create a new User</h1>
         <form action="/register" method="post">
             <div class="form-group">
-                <label for="userName">User Name</label>
-                <input id="userName" name="userName" class="form-control" type="text">
+                <label for="username">User Name</label>
+                <input id="username" name="username" class="form-control" type="text">
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
@@ -22,10 +22,6 @@
             <div class="form-group">
                 <label for="password">Password</label>
                 <input id="password" name="password" class="form-control" type="password">
-            </div>
-            <div>
-                <label for="confirmPassword">Confirm Your Password</label>
-                <input id="confirmPassword" name="password" class="form-control" type="password">
             </div>
     </div>
         </form>
